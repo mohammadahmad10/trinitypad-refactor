@@ -1,7 +1,6 @@
 import Accordion from "@/components/Accordion";
 import ButtonGroup from "@/components/ButtonGroup";
 import Card from "@/components/Card";
-import CountDown from "@/components/Countdown";
 import Model from "@/components/Model";
 
 export default function Home() {
@@ -23,7 +22,6 @@ export default function Home() {
       <div className="mx-auto max-w-4xl w-full ">
         <Accordion />
         <ButtonGroup />
-        <CountDown />
         <Model />
       </div>
       <div className="w-fit grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4 max-w-7xl mx-auto">
