@@ -59,7 +59,9 @@ export default function Footer() {
           <div className="flex flex-row gap-20">
             {footerLinks.map((category) => (
               <div key={category.title} className="flex flex-col space-y-4">
-                <h3 className="font-semibold text-lg">{category.title}</h3>
+                <h3 className="font-semibold text-lg text-start">
+                  {category.title}
+                </h3>
                 <ul className="space-y-2">
                   {category.links.map((link, index) => (
                     <li key={index}>

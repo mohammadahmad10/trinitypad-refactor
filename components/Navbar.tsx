@@ -66,58 +66,56 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16">
+    <nav className="bg-background shadow-md">
+      <div className="mx-auto px-4 py-2 sm:px-6 lg:px-8 xl:px-16">
+        <div className="flex h-16 justify-between">
           <div className="flex">
             {/* Logo */}
-            <div className="flex-shrink-0 flex items-center">
+            <div className="flex flex-shrink-0 items-center">
               <Link href="/">
                 {/* <span className="text-2xl font-bold text-primary">Logo</span> */}
                 <Image
                   src="/assets/logo.svg"
                   alt="TrinityPad Logo"
-                  width={100}
-                  height={32}
-                  className="h-10 w-auto dark:invert"
+                  width={160}
+                  height={30}
+                  className="object-cover"
                 />
               </Link>
             </div>
             {/* Desktop Navigation */}
-            <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
+            <div className="hidden md:ml-10 md:flex md:space-x-8">
               <NavigationMenu>
                 <NavigationMenuList>
                   {navbarLinks.map((item) => (
                     <NavigationMenuItem key={item.title}>
                       {item.links ? (
                         <>
-                          <NavigationMenuTrigger>
+                          <NavigationMenuTrigger className="!relative text-trinitypad-gray hover:text-primary">
                             {item.title}
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
-                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                            <ul className="flex w-[400px] flex-col gap-3 p-4">
                               {item.links.map((subItem) => (
                                 <li key={subItem.title}>
                                   <NavigationMenuLink asChild>
                                     <a
                                       href={subItem.link}
-                                      className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+                                      className={cn(
+                                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                                        pathname === subItem.link &&
+                                          "bg-active-gradient text-trinitypad-light-blue rounded-xl",
+                                      )}
                                     >
-                                      <div
-                                        className={cn(
-                                          "text-sm font-medium leading-none",
-                                          pathname === subItem.link &&
-                                            "bg-active-gradient"
-                                        )}
-                                      >
+                                      <div className="text-sm font-medium leading-none">
                                         {subItem.title}
                                         <Image
                                           src="/assets/icon.svg"
                                           alt=""
                                           className={cn(
-                                            pathname === item.link
-                                              ? "ml-2 w-4"
-                                              : "hidden"
+                                            pathname === subItem.link
+                                              ? "ml-2 inline w-4"
+                                              : "hidden",
                                           )}
                                           width={20}
                                           height={14}
@@ -134,10 +132,10 @@ export default function Navbar() {
                         <Link href={item.link} legacyBehavior passHref>
                           <NavigationMenuLink
                             className={cn(
-                              "inline-flex items-center px-1 pt-1 text-sm font-medium text-gray-500 hover:text-gray-700",
+                              "inline-flex items-center px-1 text-sm font-medium text-trinitypad-gray",
                               "transition-colors hover:text-primary",
                               pathname === item.link &&
-                                "bg-active-gradient p-2 rounded-xl text-trinitypad-light-blue"
+                                "rounded-xl bg-active-gradient px-4 py-2 text-trinitypad-light-blue",
                             )}
                           >
                             {item.title}
@@ -145,7 +143,7 @@ export default function Navbar() {
                               src="/assets/icon.svg"
                               alt=""
                               className={cn(
-                                pathname === item.link ? "ml-2 w-4" : "hidden"
+                                pathname === item.link ? "ml-2 w-4" : "hidden",
                               )}
                               width={20}
                               height={14}
@@ -160,11 +158,11 @@ export default function Navbar() {
             </div>
           </div>
           {/* Desktop Login Button */}
-          <div className="hidden sm:ml-6 sm:flex sm:items-center">
+          <div className="hidden md:ml-6 md:flex md:items-center">
             <Button>Login</Button>
           </div>
           {/* Mobile menu button */}
-          <div className="flex items-center sm:hidden">
+          <div className="flex items-center md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -172,9 +170,9 @@ export default function Navbar() {
                   <span className="sr-only">Open main menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent hideClose side="top" className="w-full h-auto">
-                <div className="flex flex-col h-full">
-                  <div className="flex items-center justify-between px-4 pt-4 pb-2">
+              <SheetContent hideClose side="top" className="h-auto w-full">
+                <div className="flex h-full flex-col">
+                  <div className="flex items-center justify-between px-4 pb-2 pt-4">
                     <Link href="/" onClick={toggleDrawer}>
                       {/* <span className="text-2xl font-bold text-primary">
                         Logo
@@ -192,14 +190,14 @@ export default function Navbar() {
                       <span className="sr-only">Close menu</span>
                     </Button>
                   </div>
-                  <div className="px-2 pt-2 pb-3 space-y-1 overflow-y-auto">
+                  <div className="space-y-1 overflow-y-auto px-2 pb-3 pt-2">
                     {navbarLinks.map((item) => (
                       <div key={item.title}>
                         {item.links ? (
                           <div className="space-y-1">
                             <button
                               onClick={() => toggleExpand(item.title)}
-                              className="flex justify-between items-center w-full px-3 py-2 text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 rounded-md"
+                              className="flex w-full items-center justify-between rounded-md px-3 py-2 text-base font-medium text-trinitypad-gray hover:text-primary"
                             >
                               {item.title}
                               {expandedItem === item.title ? (
@@ -209,12 +207,16 @@ export default function Navbar() {
                               )}
                             </button>
                             {expandedItem === item.title && (
-                              <div className="pl-4 space-y-1">
+                              <div className="space-y-1 pl-4">
                                 {item.links.map((subItem) => (
                                   <Link
                                     key={subItem.title}
                                     href={subItem.link}
-                                    className="block px-3 py-2 rounded-md text-sm font-medium text-gray-500 hover:text-gray-700 hover:bg-gray-50"
+                                    className={cn(
+                                      "block rounded-md px-3 py-2 text-sm font-medium text-trinitypad-gray hover:bg-primary/10 hover:text-primary",
+                                      pathname === subItem.link &&
+                                        "rounded-xl bg-active-gradient text-trinitypad-light-blue",
+                                    )}
                                     onClick={toggleDrawer}
                                   >
                                     {subItem.title}
@@ -223,8 +225,8 @@ export default function Navbar() {
                                       alt=""
                                       className={cn(
                                         pathname === subItem.link
-                                          ? "ml-2 w-4"
-                                          : "hidden"
+                                          ? "ml-2 inline w-4"
+                                          : "hidden",
                                       )}
                                       width={20}
                                       height={14}
@@ -237,7 +239,11 @@ export default function Navbar() {
                         ) : (
                           <Link
                             href={item.link}
-                            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+                            className={cn(
+                              "block rounded-md px-3 py-2 text-base font-medium text-trinitypad-gray hover:bg-primary/10 hover:text-primary",
+                              pathname === item.link &&
+                                "rounded-xl bg-active-gradient text-trinitypad-light-blue",
+                            )}
                             onClick={toggleDrawer}
                           >
                             {item.title}
@@ -245,7 +251,9 @@ export default function Navbar() {
                               src="/assets/icon.svg"
                               alt=""
                               className={cn(
-                                pathname === item.link ? "ml-2 w-4" : "hidden"
+                                pathname === item.link
+                                  ? "ml-2 inline w-4"
+                                  : "hidden",
                               )}
                               width={20}
                               height={14}
