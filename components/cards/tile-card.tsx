@@ -29,11 +29,9 @@ export const TileCard = ({
             />
           )}
           <div className="flex flex-col gap-2">
-            <h3 className="w-full text-xl font-medium max-md:text-sm">
-              {val.title}
-            </h3>
+            <h3 className="w-full text-xl max-md:text-sm">{val.title}</h3>
             <p
-              className={`text-blue-gradient w-full text-[32px] font-bold max-md:text-xl ${className}`}
+              className={`text-blue-gradient w-full text-[30px] leading-5 font-bold max-md:text-xl ${className}`}
             >
               {val.value}
             </p>

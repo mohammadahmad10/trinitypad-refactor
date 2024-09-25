@@ -85,27 +85,24 @@ export default function Page() {
       className="flex bg-[url('/assets/common-bg/bg-with-lines.svg')] bg-cover bg-no-repeat py-[10vh] max-md:min-h-[65vh] max-md:py-[5vh] md:min-h-[120vh]"
     >
       <div className="mx-auto flex w-full flex-col justify-center gap-10">
-        <div className="flex min-h-[70vh] justify-between max-lg:flex-col max-lg:gap-10 max-md:px-4 md:px-[4%] lg:w-full">
+        <div className="flex min-h-[70vh] max-h-[1000px] justify-between max-lg:flex-col max-lg:gap-10 max-md:px-4 md:px-[4%] lg:w-full">
           <div className="flex flex-col justify-center gap-8 lg:w-1/2">
-            <h1 data-aos="fade-in" className="h1 text-center">
+            <h1 className="text-center">
               TrinityPad: <br />
               Effortless Investing
               <br />
               <span className="text-blue-gradient">Advanced By AI</span>
             </h1>
-            <p
-              data-aos="fade-up"
-              className="description text-center tracking-wide"
-            >
+            <p data-aos="fade-up" className="text-center">
               TrinityPad is a launchpad that allows investors to back the best
               early-stage companies with ease, focusing on security, simplicity,
               and automation at its core.
             </p>
           </div>
-          <div className="flex justify-end max-lg:justify-start lg:w-1/2">
+          <div className="flex justify-end max-lg:justify-center lg:w-1/2">
             <Image
               data-aos="fade-left"
-              src="/assets/launchpad/safe.svg"
+              src="/assets/launchpad/hero/safe.svg"
               alt="safe"
               width={700}
               height={450}
@@ -120,13 +117,13 @@ export default function Page() {
               className="flex flex-col gap-5 md:max-w-lg"
               data-aos="fade-right"
             >
-              <h2 className="main-heading text-blue-gradient flex gap-5 pb-4 text-left align-middle tracking-wide max-md:justify-center">
+              <h2 className="text-blue-gradient flex gap-5 pb-4 text-left align-middle max-md:mx-auto">
                 OUR VISION <Eye size={36} color="#00CBFB" />
               </h2>
-              <h3 className="sub-heading tracking-wide max-md:text-center">
+              <h3 className="md:text-start">
                 Leading the Way in Web3 Innovation
               </h3>
-              <p className="description tracking-wide max-md:text-center">
+              <p className="max-md:text-center">
                 We envision a future where every entrepreneur can access the
                 essential resources to thrive in the decentralized economy. By
                 empowering innovators, we strive to lead the way in shaping the
@@ -135,18 +132,18 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="flex w-full justify-start md:justify-end">
+          <div className="flex w-full justify-start lg:justify-end">
             <div
               className="flex flex-col gap-5 md:max-w-lg"
               data-aos="fade-left"
             >
-              <h2 className="main-heading text-blue-gradient flex gap-5 pb-4 align-middle tracking-wide max-md:mx-auto">
+              <h2 className="text-blue-gradient flex gap-5 pb-4 align-middle max-md:mx-auto">
                 OUR MISSION <Crosshair size={36} color="#0096F4" />
               </h2>
-              <h3 className="sub-heading tracking-wide max-md:text-center">
+              <h3 className="md:text-start">
                 Transforming Web3 Entrepreneurship and Investing
               </h3>
-              <p className="description tracking-wide max-md:text-center">
+              <p className="max-md:text-center">
                 At Trinity Pad, our mission is to equip entrepreneurs with the
                 essential tools and resources to launch, manage, and scale Web3
                 businesses, driving groundbreaking innovation in the
@@ -203,7 +200,7 @@ function TrinityPadOverviewSection() {
   return (
     <div className="mx-auto my-20 w-11/12">
       <div className="flex items-start justify-center">
-        <h2 className="main-heading text-blue-gradient mb-10 w-fit p-4 tracking-wide">
+        <h2 className="text-blue-gradient mb-10 w-fit p-4">
           TrinityPad At A Glance
         </h2>
       </div>
@@ -212,12 +209,8 @@ function TrinityPadOverviewSection() {
           <div key={index} data-aos="fade-up" className="flex w-full">
             <div className="gradient-shadow-2 h-full w-full rounded-[20px] bg-[#1D203580] p-5">
               <div className="flex flex-col gap-4 p-4">
-                <h3 className="card-heading text-blue-gradient tracking-wide text-center">
-                  {i?.title}
-                </h3>
-                <p className="description my-auto text-center tracking-wide">
-                  {i?.description}
-                </p>
+                <h3 className="text-blue-gradient">{i?.title}</h3>
+                <p className="my-auto text-center">{i?.description}</p>
               </div>
             </div>
           </div>
@@ -263,7 +256,7 @@ function SocialMediaSection() {
   return (
     <div className="mx-auto my-10 w-11/12">
       <div className="flex items-start justify-center">
-        <h2 className="main-heading text-blue-gradient mb-10 w-fit p-4 tracking-wide">
+        <h2 className="text-blue-gradient mb-10 w-fit p-4">
           Engage With TrinityPad
         </h2>
       </div>
@@ -275,16 +268,18 @@ function SocialMediaSection() {
               <div
                 className={`flex w-full items-center justify-between rounded-xl ${
                   index % 2 == 0 ? "bg-gray-100/10" : "bg-slate-100/20"
-                } px-4 py-5 max-md:flex-col max-md:gap-2`}
+                } md:px-4 py-5 max-md:flex-col max-md:gap-2`}
               >
                 <div className="flex items-center justify-center gap-2">
                   {i?.icon}
-                  <p className="social-platforms">{i?.name} </p>
+                  <div className="text-blue-gradient 2xs:text-lg xs:text-xl md:text-2xl">
+                    {i?.name}{" "}
+                  </div>
                 </div>
                 <div>
                   <Link
                     href={i?.link}
-                    className="social-links flex items-center justify-center gap-2 break-all transition-all duration-500 hover:gap-5"
+                    className="text-blue-gradient 2xs:text-xs xs:text-[15px] md:text-lg flex items-center justify-center gap-2 break-all transition-all duration-500 hover:gap-5"
                     target="_blank"
                   >
                     {i?.description}
@@ -334,7 +329,7 @@ function TeamMemberSection() {
     <>
       <div id="team" className="mx-auto my-20 w-11/12">
         <div className="flex items-start justify-center">
-          <h2 className="main-heading text-blue-gradient mb-10 w-fit p-4 tracking-wide">
+          <h2 className="text-blue-gradient mb-10 w-fit p-4">
             Minds Behind TrinityPad
           </h2>
         </div>
@@ -350,15 +345,11 @@ function TeamMemberSection() {
                   <div
                     className={`size-44 rounded-full bg-cover bg-center p-2 ${i?.image}`}
                   ></div>
-                  <div className="card-heading text-blue-gradient font-bold tracking-wide">
-                    {i?.name}
-                  </div>
-                  <div className="sub-heading text-balance text-center tracking-wide">
+                  <h3 className="text-blue-gradient font-bold">{i?.name}</h3>
+                  <h4 className="text-balance font-semibold">
                     {i?.designation}
-                  </div>
-                  <div className="description text-center tracking-wide text-gray-400">
-                    {i?.description}
-                  </div>
+                  </h4>
+                  <p className="text-center text-gray-400">{i?.description}</p>
                   <div className="flex flex-row gap-5">
                     {i?.linkedIn && (
                       <Link href={i?.linkedIn}>
@@ -386,9 +377,7 @@ function AboutCompanySection() {
     <>
       <div className="mx-auto my-10 w-11/12 pb-10" data-aos="fade-down">
         <div className="flex items-start justify-center">
-          <h3 className="main-heading text-blue-gradient mb-10 w-fit p-4 tracking-wide">
-            Our Company
-          </h3>
+          <h2 className="text-blue-gradient mb-10 w-fit p-4">Our Company</h2>
         </div>
         <div className="mx-auto h-auto w-full max-w-6xl" data-aos="fade-up">
           <div className="gradient-shadow-2 rounded-[20px] bg-[#1D203580] p-5">
@@ -399,17 +388,15 @@ function AboutCompanySection() {
                 width={100}
                 height={100}
               />
-              <div className="main-heading font-extrabold tracking-wide">
-                TrinityPad
-              </div>
-              <div className="sub-heading text-balance text-center tracking-wide">
+              <h3 className="font-bold">TrinityPad</h3>
+              <h4 className="text-balance font-medium">
                 Your gateway to smart investments
-              </div>
-              <div className="description text-center tracking-wide text-gray-400">
+              </h4>
+              <p className="text-center text-gray-400">
                 TrinityPad offers early stage investment opportunities in Web3,
                 backed by Artificial Intelligence, the platform supports popular
                 chains like BNB, Solana, Ethereum, TON, Base, and more.
-              </div>
+              </p>
             </div>
           </div>
         </div>

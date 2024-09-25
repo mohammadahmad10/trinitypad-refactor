@@ -2,18 +2,18 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { TileCard } from "../cards/title-card";
+import { TileCard } from "../cards/tile-card";
 
 export default function AchievementsBanner() {
   return (
     <div className="my-20 flex min-h-[80vh] flex-row-reverse items-center gap-5 px-[4%] max-lg:min-h-[100vh] max-lg:flex-wrap max-lg:justify-center max-md:px-4 lg:justify-between lg:gap-2 xl:gap-10">
       <div className="flex flex-col gap-7 max-lg:mt-10 max-lg:w-full max-lg:items-center max-lg:justify-center max-lg:text-start lg:w-[700px] lg:items-start lg:justify-start">
-        <h2 data-aos="fade-down" className="main-heading p-4 lg:text-start">
+        <h2 className="p-4 lg:text-start">
           Trinity IDO <br />
           <span className="text-blue-gradient">Advanced By AI</span>
         </h2>
 
-        <p className="max-w-96 text-lg max-md:text-base md:max-w-lg">
+        <p className="max-w-96 md:max-w-lg">
           TrinityPad is excited to announce the successful completion of our
           groundbreaking private raise in July 2024!
         </p>
