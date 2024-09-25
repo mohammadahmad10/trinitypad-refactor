@@ -17,7 +17,7 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -44,8 +44,8 @@ body {
     --chart-5: 27 87% 67%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
+  .dark { */
+    --background: 233, 29%, 16%;
     --foreground: 210 40% 98%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
@@ -79,4 +79,22 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+
+.gradient-shadow-2 {
+  box-shadow: 2.2px -1.1px 4.4px 0px #008af233 inset;
+  box-shadow: -2.2px 1.1px 12.5px 0px #008af233 inset;
+}
+
+.text-blue-gradient {
+  background: linear-gradient(
+    100.29deg,
+    #00f4ff 10.12%,
+    #008af2 86.31%,
+    #0020e4 100.51%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
