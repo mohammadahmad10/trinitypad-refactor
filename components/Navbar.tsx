@@ -16,6 +16,7 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
+import { LoginButton } from "./PrivyButtons";
 
 const navbarLinks = [
   {
@@ -84,7 +85,7 @@ export default function Navbar() {
               </Link>
             </div>
             {/* Desktop Navigation */}
-            <div className="hidden md:ml-10 md:flex md:space-x-8">
+            <div className="hidden lg:ml-10 lg:flex lg:space-x-8">
               <NavigationMenu>
                 <NavigationMenuList>
                   {navbarLinks.map((item) => (
@@ -104,7 +105,7 @@ export default function Navbar() {
                                       className={cn(
                                         "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                                         pathname === subItem.link &&
-                                          "bg-active-gradient text-trinitypad-light-blue rounded-xl",
+                                          "rounded-xl bg-active-gradient text-trinitypad-light-blue",
                                       )}
                                     >
                                       <div className="text-sm font-medium leading-none">
@@ -158,11 +159,12 @@ export default function Navbar() {
             </div>
           </div>
           {/* Desktop Login Button */}
-          <div className="hidden md:ml-6 md:flex md:items-center">
-            <Button>Login</Button>
+          <div className="hidden lg:ml-6 lg:flex lg:items-center">
+            {/* <Button>Login</Button> */}
+            <LoginButton className="text-sm" />
           </div>
           {/* Mobile menu button */}
-          <div className="flex items-center md:hidden">
+          <div className="flex items-center lg:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
@@ -264,9 +266,10 @@ export default function Navbar() {
                     ))}
                   </div>
                   <div className="mt-auto px-5 py-4">
-                    <Button className="w-full" onClick={toggleDrawer}>
+                    {/* <Button className="w-full" onClick={toggleDrawer}>
                       Login
-                    </Button>
+                    </Button> */}
+                    <LoginButton className="w-full" />
                   </div>
                 </div>
               </SheetContent>

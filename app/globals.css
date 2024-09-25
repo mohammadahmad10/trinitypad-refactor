@@ -34,6 +34,14 @@ body {
   -webkit-text-fill-color: white;
 }
 
+.gradient-trinity-border {
+  background:
+    linear-gradient(rgba(51, 54, 76, 0.9), rgba(34, 36, 48, 0.9)) padding-box,
+    linear-gradient(100deg, #00f4ff 1%, #008af2 50%, #0020e4 90%) border-box;
+  border: 2px solid transparent;
+  border-radius: 20px;
+}
+
 @layer base {
   :root {
     /* --background: 0 0% 100%;
