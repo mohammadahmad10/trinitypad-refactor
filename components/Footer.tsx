@@ -52,9 +52,9 @@ export default function Footer() {
               alt="TrinityPad Logo"
               width={120}
               height={40}
-              className="h-20 w-auto dark:invert"
+              className="h-10 w-auto"
             />
-            <div>Stay ahead of the curve.</div>
+            <div className="p-5">Stay ahead of the curve.</div>
           </div>
           <div className="flex flex-row gap-20">
             {footerLinks.map((category) => (
@@ -82,7 +82,7 @@ export default function Footer() {
               alt="TrinityPad Logo"
               width={100}
               height={32}
-              className="h-20 w-auto dark:invert"
+              className="h-10 w-auto dark:invert"
             />
           </div>
           <div className="text-center mb-4">Stay ahead of the curve.</div>
