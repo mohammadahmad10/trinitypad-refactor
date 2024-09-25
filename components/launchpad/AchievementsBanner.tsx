@@ -34,7 +34,8 @@ export default function AchievementsBanner() {
       </div>
 
       <Image
-        src="/assets/launchpad/invest.png"
+        data-aos="fade-down"
+        src="/assets/launchpad/hero/invest.png"
         alt="invest"
         width={700}
         height={450}
