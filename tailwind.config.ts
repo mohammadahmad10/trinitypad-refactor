@@ -11,6 +11,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        xs: "375px",
+        "2xs": "320px",
+      },
       container: {
         center: true,
         padding: "2rem",
@@ -20,6 +24,7 @@ const config: Config = {
       },
       extend: {
         colors: {
+          "trinitypad-gray": "#C2C5D6",
           border: "hsl(var(--border))",
           input: "hsl(var(--input))",
           ring: "hsl(var(--ring))",
@@ -91,6 +96,7 @@ const config: Config = {
         sm: "calc(var(--radius) - 4px)",
       },
       colors: {
+        "trinitypad-gray": "#C2C5D6",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
