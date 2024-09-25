@@ -32,13 +32,12 @@ const featuresList = [
 const Features = () => {
   return (
     <div className="mb-20">
-      <h1 data-aos="fade-down" className="main-heading my-16 p-4">
+      <h2 className="my-16 p-4">
         What Sets <span className="text-blue-gradient">TrinityPad</span> Apart?
-      </h1>
+      </h2>
       <div className="mx-auto flex w-11/12 flex-col flex-wrap items-stretch justify-center max-lg:gap-5 md:w-10/12 lg:flex-row lg:gap-10">
         {featuresList.map((feature, id) => (
           <div
-            data-aos="fade-up"
             key={id}
             className="gradient-shadow-2 flex flex-col gap-5 rounded-[20px] bg-[#1D203580] p-4 text-center max-lg:w-full lg:w-5/12"
           >
@@ -49,8 +48,8 @@ const Features = () => {
               alt={feature.title}
               className="mx-auto"
             />
-            <h2 className="card-heading text-blue-gradient">{feature.title}</h2>
-            <p className="description">{feature.description}</p>
+            <h3 className="text-blue-gradient">{feature.title}</h3>
+            <p>{feature.description}</p>
           </div>
         ))}
       </div>
