@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { TileCard } from "../cards/tile-card";
+import { TileCard } from "../ui/cards/tile-card";
 
 export default function AchievementsBanner() {
   return (
