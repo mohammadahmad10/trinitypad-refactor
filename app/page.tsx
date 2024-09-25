@@ -4,7 +4,7 @@ import AchievementsBanner from "@/components/launchpad/AchievementsBanner";
 
 export default function Home() {
   return (
-    <div>
+    <div className="px-0 md:px-24">
       <Hero />
       <Features />
       <AchievementsBanner />
