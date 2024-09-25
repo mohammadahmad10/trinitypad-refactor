@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: "regular", sans-serif;
+  background: rgba(29, 32, 53);
+  color: white;
+  overflow-x: hidden;
+  scroll-behavior: smooth !important;
+}
+
+.gradient-shadow-2 {
+  box-shadow: 2.2px -1.1px 4.4px 0px #008af233 inset;
+  box-shadow: -2.2px 1.1px 12.5px 0px #008af233 inset;
+}
 
 @layer base {
   :root {
@@ -60,12 +72,11 @@
   }
 }
 
-
 @layer base {
   * {
     @apply border-border;
-    }
+  }
   body {
     @apply bg-background text-foreground;
-    }
+  }
 }
