@@ -42,11 +42,11 @@ const footerLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-foreground border-t">
+    <footer className="border-t bg-background text-foreground">
       <div className="container mx-auto px-4 py-8">
         {/* Desktop Footer */}
-        <div className="hidden md:flex justify-between items-start">
-          <div className="flex-shrink-0 mr-12">
+        <div className="hidden items-start justify-between md:flex">
+          <div className="mr-12 flex-shrink-0">
             <Image
               src="/assets/logo.svg"
               alt="TrinityPad Logo"
@@ -54,18 +54,23 @@ export default function Footer() {
               height={40}
               className="h-10 w-auto"
             />
-            <div className="p-5">Stay ahead of the curve.</div>
+            <div className="p-4 text-sm text-trinitypad-gray">
+              Stay ahead of the curve.
+            </div>
           </div>
           <div className="flex flex-row gap-20">
             {footerLinks.map((category) => (
               <div key={category.title} className="flex flex-col space-y-4">
-                <h3 className="font-semibold text-lg text-start">
+                <h3 className="text-start text-base font-medium">
                   {category.title}
                 </h3>
                 <ul className="space-y-2">
                   {category.links.map((link, index) => (
                     <li key={index}>
-                      <Link href={link.link} className="hover:underline">
+                      <Link
+                        href={link.link}
+                        className="text-sm text-trinitypad-gray hover:underline"
+                      >
                         {link.title}
                       </Link>
                     </li>
@@ -78,7 +83,7 @@ export default function Footer() {
 
         {/* Mobile Footer */}
         <div className="md:hidden">
-          <div className="flex justify-center mb-6">
+          <div className="mb-6 flex justify-center">
             <Image
               src="/assets/logo.svg"
               alt="TrinityPad Logo"
@@ -87,7 +92,9 @@ export default function Footer() {
               className="h-10 w-auto dark:invert"
             />
           </div>
-          <div className="text-center mb-4">Stay ahead of the curve.</div>
+          <div className="mb-4 text-center text-xs text-trinitypad-gray">
+            Stay ahead of the curve.
+          </div>
           <Accordion
             type="single"
             collapsible
@@ -96,12 +103,17 @@ export default function Footer() {
           >
             {footerLinks.map((category, index) => (
               <AccordionItem value={`item-${index}`} key={category.title}>
-                <AccordionTrigger>{category.title}</AccordionTrigger>
+                <AccordionTrigger className="text-sm font-medium">
+                  {category.title}
+                </AccordionTrigger>
                 <AccordionContent>
                   <ul className="space-y-2 py-2">
                     {category.links.map((link, index) => (
                       <li key={index}>
-                        <Link href={link.link} className="hover:underline">
+                        <Link
+                          href={link.link}
+                          className="text-xs text-trinitypad-gray hover:underline"
+                        >
                           {link.title}
                         </Link>
                       </li>
