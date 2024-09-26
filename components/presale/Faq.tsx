@@ -43,7 +43,7 @@ const faqsData = [
 const FAQComp = () => {
   return (
     <section className="w-full bg-[url('/assets/presale/faq-bg.svg')] bg-cover bg-no-repeat px-[4%] max-md:py-14 md:py-24 md:pb-20">
-      <h2 className="z-1 p-4 pb-10 mx-auto">Frequently Asked Questions</h2>
+      <h2 className="z-1 mx-auto p-4 pb-10">Frequently Asked Questions</h2>
       {/* <Image
           src="/assets/landing/faq.svg"
           alt="faq"
@@ -52,7 +52,7 @@ const FAQComp = () => {
           className="object-cover z-10 max-md:absolute max-md:right-0 max-md:top-[-20px] max-md:w-[100px] max-md:h-[100px]"
         /> */}
 
-      <Accordion type="single" collapsible className="mt-7">
+      <Accordion type="single" collapsible className="mx-auto mt-7 max-w-4xl">
         {faqsData.map((val, index) => (
           <AccordionItem
             // data-aos="flip-left"
@@ -60,11 +60,11 @@ const FAQComp = () => {
             value={val.question}
             className="mt-4 w-full rounded-[20px] border border-[#FFFFFF4D] bg-slate-300/30 px-4"
           >
-            <AccordionTrigger className="text-start hover:no-underline max-md:text-sm md:text-base">
+            <AccordionTrigger className="text-start hover:no-underline">
               {index + 1}. {val.question}
             </AccordionTrigger>
-            <AccordionContent className="text-start max-md:text-xs md:text-sm">
-              <p dangerouslySetInnerHTML={{ __html: val.answer }} />
+            <AccordionContent className="text-start">
+              <span dangerouslySetInnerHTML={{ __html: val.answer }} />
             </AccordionContent>
           </AccordionItem>
         ))}

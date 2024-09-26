@@ -91,7 +91,7 @@ export default function Navbar() {
                     <NavigationMenuItem key={item.title}>
                       {item.links ? (
                         <>
-                          <NavigationMenuTrigger className="!relative text-trinitypad-gray hover:text-primary">
+                          <NavigationMenuTrigger className="!relative text-sm text-trinitypad-gray hover:text-primary">
                             {item.title}
                           </NavigationMenuTrigger>
                           <NavigationMenuContent>
@@ -107,7 +107,7 @@ export default function Navbar() {
                                           "rounded-xl bg-active-gradient text-trinitypad-light-blue",
                                       )}
                                     >
-                                      <div className="text-sm font-medium leading-none">
+                                      <div className="text-xs font-medium leading-none">
                                         {subItem.title}
                                         <Image
                                           src="/assets/icon.svg"

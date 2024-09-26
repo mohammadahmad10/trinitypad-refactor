@@ -51,15 +51,15 @@ const TNTTokenomics = () => {
       /> */}
       <div className="w-full">
         <div className="mx-auto flex max-w-xl flex-col gap-4 max-md:mx-[4%]">
-          <h3 className="rounded-2xl bg-btn-gradient py-4 text-center text-2xl font-medium text-black max-md:text-xl">
+          <h3 className="rounded-2xl bg-btn-gradient py-4 !text-black">
             Strategic Round
           </h3>
           {data.map((i, index) => (
             <div key={index} className="flex w-full gap-2">
-              <div className="bg-trinitypad-mid-blue w-2/5 rounded-xl py-3 text-center max-md:text-xs">
+              <div className="w-2/5 rounded-xl bg-trinitypad-mid-blue py-3 text-center max-md:text-xs">
                 {i?.name}
               </div>
-              <div className="bg-trinitypad-mid-blue w-3/5 rounded-xl py-3 text-center max-md:text-xs">
+              <div className="w-3/5 rounded-xl bg-trinitypad-mid-blue py-3 text-center max-md:text-xs">
                 {i?.value}
               </div>
             </div>
@@ -68,7 +68,7 @@ const TNTTokenomics = () => {
       </div>
 
       <h2 className="mt-10 p-4">$TNT Tokenomics</h2>
-      <div className="relative text-2xl max-md:hidden">
+      <div className="relative max-md:hidden">
         <Image
           data-aos="fade-up"
           src="/assets/presale/tnt.svg"
