@@ -1,29 +1,24 @@
+import * as React from "react";
+
 import { cn } from "@/lib/utils";
-import React from "react";
 
-interface PrimaryInputProps {
-  value: string;
-  setValue: (val: string) => void;
-  placeholder: string;
-  className?: string;
-}
-const PrimaryInput = ({
-  value,
-  setValue,
-  placeholder,
-  className,
-}: PrimaryInputProps) => {
-  return (
-    <input
-      type="text"
-      placeholder={placeholder}
-      value={value}
-      onChange={(e) => {
-        setValue(e.target.value);
-      }}
-      className={cn("px-4 py-3 rounded-[20px] w-full text-black", className)}
-    />
-  );
-};
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
-export default PrimaryInput;
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={cn(
+          "flex min-h-12 w-full rounded-xl border border-input bg-foreground px-3 py-2 text-sm text-background ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          className,
+        )}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+Input.displayName = "Input";
+
+export { Input };

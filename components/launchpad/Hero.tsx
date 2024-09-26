@@ -1,7 +1,9 @@
 "use client";
 import React, { useState } from "react";
 import Image from "next/image";
-import PrimaryInput from "@/components/ui/input";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+// import { Loader } from "lucide-react";
 
 export default function Hero() {
   const [email, setEmail] = useState("");
@@ -18,25 +20,24 @@ export default function Hero() {
             Invest with ease and confidence, every step of the way.
           </p>
           <div className="relative mt-4 w-full max-w-lg">
-            <PrimaryInput
+            <Input
               value={email}
-              setValue={setEmail}
+              onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter Email Address"
               className="relative"
+              type="email"
             />
-            {/* <PrimaryBtn
-            onClick={() => submitMail({ email: email })}
-            className="right-2 top-[12%] mx-auto max-md:mt-1 md:absolute"
-          >
-            <div className="flex items-center gap-2">
-              {isPending && <SpinnerBtn />}
+            <Button
+              //  onClick={() => submitMail({ email: email })}
+              className="right-2 top-1 mx-auto rounded-xl bg-btn-gradient text-foreground max-md:mt-1 md:absolute"
+            >
+              {/* {isPending && <Loader className="mr-2 animate-spin" />} */}
               <p>Join Waitlist</p>
-            </div>
-          </PrimaryBtn> */}
+            </Button>
           </div>
         </div>
         <Image
-          src="/assets/launchpad/hero/safe.svg"
+          src="/assets/launchpad/hero/safe.png"
           alt="safe"
           width={700}
           height={450}

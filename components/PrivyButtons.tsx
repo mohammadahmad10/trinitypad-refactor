@@ -1,15 +1,15 @@
 "use client";
 
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { usePrivy } from "@privy-io/react-auth";
 
 export function LoginButton({ className }: { className?: string }) {
-  const { login } = usePrivy();
+  const { connectWallet } = usePrivy();
   return (
     <Button
-      onClick={() => login()}
+      onClick={() => connectWallet()}
       className={cn(
         "gradient-trinity-border !rounded-xl text-lg text-white",
         className,
@@ -54,4 +54,9 @@ export function LogoutButton({ className }: { className?: string }) {
       </Button>
     </div>
   );
+}
+
+export function PrivyAuthButton() {
+  const { authenticated } = usePrivy();
+  return <>{authenticated ? <LogoutButton /> : <LoginButton />}</>;
 }

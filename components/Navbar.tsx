@@ -74,7 +74,6 @@ export default function Navbar() {
             {/* Logo */}
             <div className="flex flex-shrink-0 items-center">
               <Link href="/">
-                {/* <span className="text-2xl font-bold text-primary">Logo</span> */}
                 <Image
                   src="/assets/logo.svg"
                   alt="TrinityPad Logo"
@@ -103,7 +102,7 @@ export default function Navbar() {
                                     <a
                                       href={subItem.link}
                                       className={cn(
-                                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+                                        "block select-none space-y-1 rounded-xl p-3 leading-none no-underline outline-none transition-colors hover:bg-background-gradient hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
                                         pathname === subItem.link &&
                                           "rounded-xl bg-active-gradient text-trinitypad-light-blue",
                                       )}
@@ -159,7 +158,7 @@ export default function Navbar() {
             </div>
           </div>
           {/* Desktop Login Button */}
-          <div className="hidden lg:ml-6 lg:flex lg:items-center">
+          <div className="hidden max-lg:w-full max-md:flex-1 md:ml-6 md:flex md:items-center md:justify-end">
             {/* <Button>Login</Button> */}
             <LoginButton className="text-sm" />
           </div>

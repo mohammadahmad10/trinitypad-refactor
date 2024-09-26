@@ -85,7 +85,7 @@ export default function Page() {
       className="flex bg-[url('/assets/common-bg/bg-with-lines.svg')] bg-cover bg-no-repeat py-[10vh] max-md:min-h-[65vh] max-md:py-[5vh] md:min-h-[120vh]"
     >
       <div className="mx-auto flex w-full flex-col justify-center gap-10">
-        <div className="flex min-h-[70vh] max-h-[1000px] justify-between max-lg:flex-col max-lg:gap-10 max-md:px-4 md:px-[4%] lg:w-full">
+        <div className="flex max-h-[1000px] min-h-[70vh] justify-between max-lg:flex-col max-lg:gap-10 max-md:px-4 md:px-[4%] lg:w-full">
           <div className="flex flex-col justify-center gap-8 lg:w-1/2">
             <h1 className="text-center">
               TrinityPad: <br />
@@ -102,7 +102,7 @@ export default function Page() {
           <div className="flex justify-end max-lg:justify-center lg:w-1/2">
             <Image
               data-aos="fade-left"
-              src="/assets/launchpad/hero/safe.svg"
+              src="/assets/launchpad/hero/safe.png"
               alt="safe"
               width={700}
               height={450}
@@ -383,7 +383,7 @@ function AboutCompanySection() {
           <div className="gradient-shadow-2 rounded-[20px] bg-[#1D203580] p-5">
             <div className="flex flex-col items-center justify-center gap-5 py-4">
               <Image
-                src="/assets/airdrop/airdrop.svg"
+                src="/assets/icon.svg"
                 alt="trinity pad logo"
                 width={100}
                 height={100}
