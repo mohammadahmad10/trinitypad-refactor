@@ -4,7 +4,7 @@
 
 body {
   font-family: "regular", sans-serif;
-  background: rgba(29, 32, 53);
+  background: hsl(var(--background));
   color: white;
   overflow-x: hidden;
   scroll-behavior: smooth !important;
