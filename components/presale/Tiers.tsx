@@ -124,7 +124,7 @@ function TierBenefitsTable() {
   }
 
   return (
-    <div className="hide-scroll flex w-full justify-center overflow-auto">
+    <div className="changed-scroll flex w-full justify-center overflow-auto">
       <div className="flex w-full flex-row items-end gap-4 md:justify-center md:max-lg:gap-0">
         <div className="mb-2 divide-y-2 md:max-lg:mr-3">
           <div className="flex h-full w-full flex-col items-start justify-end gap-2 divide-y-2 rounded-lg bg-trinitypad-mid-blue p-2">

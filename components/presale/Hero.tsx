@@ -3,14 +3,12 @@ export default function Hero() {
   return (
     <section className="flex min-h-[100vh] w-full flex-col items-center justify-center gap-5 bg-[url('/assets/presale/hero-bg.svg')] bg-cover bg-no-repeat max-md:min-h-[65vh] max-md:px-4">
       <div className="my-10 flex flex-col items-center justify-center">
-        <p className="rounded-full border border-white px-4 py-2 text-xl font-medium capitalize max-md:text-sm">
-          TRINITY TOKEN
-        </p>
+        <h5 className="font-medium capitalize">TRINITY TOKEN</h5>
         <div className="py-4">
           <h1 data-aos="fade-down" className="text-center capitalize">
             Participate in the
             <br />
-            future of <span className="text-blue-gradient"> Web3</span>
+            future of <span className="text-blue-gradient">Web3</span>
           </h1>
         </div>
         <div className="max-md:hidden">
@@ -28,7 +26,7 @@ export default function Hero() {
         <div className="w-full">
           <div className="mx-auto box-content h-4 w-[80%] rounded-xl border border-primary md:w-56">
             <div
-              className={`w-full h-4 rounded-xl bg-primary`}
+              className={`h-4 w-full rounded-xl bg-primary`}
               // className={`w-[${percentageRaised}%] h-4 rounded-xl bg-primary`}
             />
           </div>
